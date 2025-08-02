@@ -1,7 +1,8 @@
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import AppName from "./componemnts/AppName"
 import AddTodo from "./componemnts/AddTodo";
 import TodoItems from "./componemnts/TodoItems";
-// import TodoItem2 from "./componemnts/TodoItem2";
+import PassGen from "../PassGenerator";
 import "./App.css";
 function App() {
   const todoItems = [
@@ -20,11 +21,16 @@ function App() {
   ];
 
   return (
+      <>
     <center className="todo-container">
       <AppName />
       <AddTodo />
       <TodoItems todoItems={todoItems}></TodoItems>
     </center>
+    <div className="pass-gen-container">
+      <PassGen />
+    </div>
+    </>
   );
 }
 
