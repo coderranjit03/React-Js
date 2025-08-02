@@ -203,73 +203,183 @@ _Not recommended for beginners._
 ---
 
 
-04\_Functional\_and\_Class\_Components.md
------------------------------------------
+````
+# 🧩 Functional and Class Components in React
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   markdownCopyEdit# 🧩 Functional and Class Components in React  In React, **components** are the building blocks of the UI. They let you split the UI into independent, reusable pieces. React provides two main types of components:  1. Functional Components    2. Class Components  ---  ## ⚛️ 1. Functional Components  ### ✅ What Are They?  Functional components are **JavaScript functions** that return JSX.  ### 📌 Syntax  ```jsx  function Welcome() {    return   Hello from Functional Component! ================================  ;  }  // OR using arrow function  const Welcome = () =>   Hello from Functional Component! ================================  ;   `
+In React, **components** are the building blocks of the UI. They let you split the UI into independent, reusable pieces. React provides two main types of components:
 
-### 📦 Features
+1. Functional Components  
+2. Class Components
 
-*   Simpler and shorter syntax
-    
-*   Can use **React Hooks** for state and lifecycle
-    
-*   Recommended for most modern React apps
-    
+---
 
-🧠 Example: Functional Component
---------------------------------
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   jsxCopyEditconst Greet = ({ name }) => {    return   Hi, {name}! -----------  ;  };  const App = () => {    return (    );  };   `
-
-🧰 2. Class Components
-----------------------
+## ⚛️ 1. Functional Components
 
 ### ✅ What Are They?
 
-Class components use **ES6 classes** and extend React.Component.
+Functional components are **JavaScript functions** that return JSX.
 
 ### 📌 Syntax
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   jsxCopyEditimport React, { Component } from 'react';  class Welcome extends Component {    render() {      return   Hello from Class Component! ===========================  ;    }  }   `
+```jsx
+function Welcome() {
+  return <h1>Hello from Functional Component!</h1>;
+}
+
+// OR using arrow function
+const Welcome = () => <h1>Hello from Functional Component!</h1>;
+````
+
+### 📦 Features
+
+* *   Simpler and shorter syntax
+*     
+* *   Can use **React Hooks** for state and lifecycle
+*     
+* *   Recommended for most modern React apps
+*     
+
+* * *
+
+## 🧠 Example: Functional Component
+
+```jsx
+const Greet = ({ name }) => {
+  return <h2>Hi, {name}!</h2>;
+};
+
+const App = () => {
+  return (
+    <div>
+      <Greet name="Riya" />
+      <Greet name="Ravi" />
+    </div>
+  );
+};
+```
+
+* * *
+
+## 🧰 2. Class Components
+
+### ✅ What Are They?
+
+Class components use **ES6 classes** and extend `React.Component`.
+
+### 📌 Syntax
+
+```jsx
+import React, { Component } from 'react';
+
+class Welcome extends Component {
+  render() {
+    return <h1>Hello from Class Component!</h1>;
+  }
+}
+```
 
 ### 🧳 Features
 
-*   Access to lifecycle methods (componentDidMount, etc.)
-    
-*   Manage internal state using this.state
-    
-*   Verbose compared to functional components
-    
+* *   Access to lifecycle methods (`componentDidMount`, etc.)
+*     
+* *   Manage internal state using `this.state`
+*     
+* *   Verbose compared to functional components
+*     
 
-🧠 Example: Class Component with State
---------------------------------------
+* * *
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   jsxCopyEditclass Counter extends React.Component {    constructor() {      super();      this.state = { count: 0 };    }    increment = () => {      this.setState({ count: this.state.count + 1 });    };    render() {      return (                    Count: {this.state.count}          Increment      );    }  }   `
+## 🧠 Example: Class Component with State
 
-🔍 Functional vs Class Components
----------------------------------
+```jsx
+class Counter extends React.Component {
+  constructor() {
+    super();
+    this.state = { count: 0 };
+  }
 
-FeatureFunctionalClassSyntaxFunction or arrow functionES6 classState managementuseState hookthis.stateLifecycle methodsuseEffect hookcomponentDidMount etc.SimplicitySimple, preferredVerboseHooks support✅ Yes❌ No
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
 
-🧪 React Internals: Rendering
------------------------------
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.increment}>Increment</button>
+      </div>
+    );
+  }
+}
+```
 
-*   Both types render JSX.
-    
-*   React re-renders on state or props change.
-    
-*   Functional components are faster and easier to test.
-    
+* * *
 
-🖼️ Visual Reference
---------------------
+## 🔍 Functional vs Class Components
 
-✅ Summary
----------
+Feature
 
-*   Use **functional components** by default in modern React.
-    
-*   Use **class components** when working with legacy codebases.
-    
-*   Functional components + Hooks = Powerful, elegant code.
+Functional
+
+Class
+
+Syntax
+
+Function or arrow function
+
+ES6 class
+
+State management
+
+`useState` hook
+
+`this.state`
+
+Lifecycle methods
+
+`useEffect` hook
+
+`componentDidMount` etc.
+
+Simplicity
+
+Simple, preferred
+
+Verbose
+
+Hooks support
+
+✅ Yes
+
+❌ No
+
+* * *
+
+## 🧪 React Internals: Rendering
+
+* *   Both types render JSX.
+*     
+* *   React re-renders on state or props change.
+*     
+* *   Functional components are faster and easier to test.
+*     
+
+* * *
+
+## 🖼️ Visual Reference
+
+![Functional vs Class Components](https://i.imgur.com/zoKnZlx.png)
+
+* * *
+
+## ✅ Summary
+
+* *   Use **functional components** by default in modern React.
+*     
+* *   Use **class components** when working with legacy codebases.
+*     
+* *   Functional components + Hooks = Powerful, elegant code.
+*     
+
+* * *
+
