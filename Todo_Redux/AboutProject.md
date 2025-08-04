@@ -21,7 +21,7 @@ UI["AddTodo.jsx & Todos.jsx"] -->|dispatch(action)| Actions
 Actions --> Reducer["todoSlice.js"]
 Reducer --> Store["store.js"]
 Store --> UI
-
+```
 ---
 
 ## 🏪 1. **Redux Store** (src/app/store.js)
