@@ -13,15 +13,33 @@ Imagine this:
 
 ---
 
-## 🔄 Redux Flow Breakdown
+## 🔄 Redux Flow Breakdown (Your Project)
+```
++--------------------------+
+|   AddTodo.jsx & Todos.jsx |
++------------+-------------+
+             |
+             v
+     +------------------+
+     |   Redux Actions  |
+     +--------+---------+
+              |
+              v
+   +------------------------+
+   | todoSlice.js (Reducer) |
+   +-----------+------------+
+               |
+               v
+     +--------------------+
+     | store.js (Store)   |
+     +---------+----------+
+               |
+               v
++-------------------------------+
+|   Back to UI Components       |
++-------------------------------+
 
-```mermaid
-graph TD
-  UI["AddTodo.jsx & Todos.jsx"] -->|dispatch(action)| ACTIONS["Redux Actions"]
-  ACTIONS --> REDUCER["todoSlice.js (Reducer)"]
-  REDUCER --> STORE["store.js (Redux Store)"]
-  STORE --> UI
-  ```
+``` 
 ---
 
 ## 🏪 1. **Redux Store** (src/app/store.js)
