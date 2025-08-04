@@ -17,11 +17,10 @@ Imagine this:
 
 ```mermaid
 graph TD
-UI(AddTodo.jsx & Todos.jsx) -->|dispatch(action)| Actions
-Actions --> Reducer(todoSlice.js)
-Reducer --> Store(store.js)
+UI["AddTodo.jsx & Todos.jsx"] -->|dispatch(action)| Actions
+Actions --> Reducer["todoSlice.js"]
+Reducer --> Store["store.js"]
 Store --> UI
-```
 
 ---
 
