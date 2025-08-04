@@ -13,14 +13,14 @@ Imagine this:
 
 ---
 
-## 🔄 Redux Flow Breakdown (Your Project)
+## 🔄 Redux Flow Breakdown
 
 ```mermaid
 graph TD
-  UI[AddTodo.jsx & Todos.jsx] -->|dispatch(action)| Actions[Redux Actions]
-  Actions --> Reducer[todoSlice.js (Reducer)]
-  Reducer --> Store[store.js (Redux Store)]
-  Store --> UI
+  UI["AddTodo.jsx & Todos.jsx"] -->|dispatch(action)| ACTIONS["Redux Actions"]
+  ACTIONS --> REDUCER["todoSlice.js (Reducer)"]
+  REDUCER --> STORE["store.js (Redux Store)"]
+  STORE --> UI
   ```
 ---
 
