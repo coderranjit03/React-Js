@@ -1,4 +1,3 @@
----
 
 ## 🧠 What is Redux?
 
@@ -6,7 +5,6 @@
 
 > Think of Redux as a **global brain** for your app’s state, accessible from any component, without prop drilling.
 
----
 
 ## 📜 A Brief History of Redux
 
